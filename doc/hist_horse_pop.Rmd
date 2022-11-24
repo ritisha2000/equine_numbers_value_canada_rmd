@@ -1,11 +1,14 @@
 ---
 title: "Historical horse population in Canada"
-output: github_document
+output: 
+  html_document:
+    toc: TRUE
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
+library(knitr)
 ```
 
 ## Aim
@@ -57,7 +60,7 @@ max_horses <- horse_pop %>%
   group_by(Province) %>% 
   summarize(Maximum = max(Value),
             Minimum = min(Value))
-knitr::kable(max_horses, caption = "Table 1. Range of number of horses by province between 1940-1972")
+knitr::kable(max_horses, caption = "Table 1. Horse population in Canada")
 ```
 
 Below we zoom in and look at the province of Alberta:
